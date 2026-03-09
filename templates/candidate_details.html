@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Candidate Details
+{% endblock %}
+
+{% block content %}
+    <h1 class="display-4 text-center card">Candidate Details</h1>
+    <div class="row mt-4 justify-content-center">
+        <div class="col-md-6 card p-4 shadow-lg ">
+            
+        <h3>{{ candidate.name }}<img src="https://randomuser.me/api/portraits/men/{{ candidate.id }}.jpg"
+                class="rounded-circle d-block mx-auto mb-3" width="120" height="120" alt="Candidate Photo"> Information</h3>
+            <h3>Personal Information</h3>
+            <p><strong>Name:</strong> {{ candidate.name }}</p>
+            <p><strong>Department:</strong> {{ candidate.department }}</p>
+        
+            <p>
+                <strong>Resume:</strong> <a href="{{ url_for('static', filename='resumes/' + candidate.resume) }}" target="_blank" class="btn btn-outline-primary">View Resume</a>
+                
+            </p>
+            
+            <h3>Application Information</h3>
+            <p><strong>Drive:</strong> {{ candidate.drives.name }}</p>
+            <p><strong>Company:</strong> {{ candidate.drives.company.name }}</p>
+            
+        </div>
+        
+    </div>
+{% endblock %}

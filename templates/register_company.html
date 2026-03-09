@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register Company
+{% endblock %}
+
+{% block content %}
+    <h1 class="display-4">Register New Company</h1>
+    <form action="" method="post">
+        <div class="form-group">
+            <label for="name" class="form-label">Company Name:</label>
+            <input type="text" class="form-control" name="name" id="" required>
+        </div>
+        <div class="form-group">
+            <label for="password" class="form-label" type="password">Company Password:</label>
+            <input type="password" class="form-control" name="password" id="" required>
+        </div>
+        <div class="form-group">
+            <label for="confirm_password" class="form-label">Confirm Password:</label>
+            <input type="password" class="form-control" name="confirm_password" id="" required>
+        </div>
+
+        <div class="form-group">    
+            <label for="location" class="form-label">Company Location:</label>
+            <input type="text" class="form-control" name="location" id="" required> 
+        </div>
+
+        <div class="form-group">
+            <div class="form-group">
+                <label for="description" class="form-label">Company Description:</label>
+                <textarea class="form-control" name="description" id="" required></textarea>
+            </div>
+            <input type="submit" value="Register Company" class="btn btn-primary mt-3">
+        </div>
+    </form>
+{% endblock %}

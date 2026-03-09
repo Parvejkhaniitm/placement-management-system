@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Candidate History
+{% endblock %}
+
+{% block content %}
+
+<h1 class=" text-center">Application History for </h1>
+
+<h3 class="display-6">Applied Drives</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Drive No</th>
+            <th>Drive Name</th>
+            <th>Company</th>
+            <th>Interview</th>
+            <th>Interview Date</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for history in histories %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ history.drive.name }}</td>
+            <td>{{ history.drive.company.name }}</td>
+            <td>{{ history.interview_type }}</td>
+            <td>{{ history.interview_date }}</td>
+            <td>{{ history.status }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Company Details
+{% endblock %}
+
+{% block content %}
+    <div class="row mt-4 card">
+        <h3 class="display-5 text-center"> Company: {{ company.name }}</h3>
+    </div>
+    
+    <h3 class=" mt-4"> Overview:</h3>
+    <p>{{ company.description }}</p>
+    </p>
+    <h3 class=" display-5 mt-4"> Current Drives:</h3>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Drive Name</th>
+                <th> View Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for drive in drives %}
+            <tr>
+                <td>{{ drive.name }}</td>
+                <td><a href="{{ url_for('candidate_drive_details', drive_id=drive.id) }}" class="btn btn-outline-primary">View Details</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+
+    
+{% endblock %}

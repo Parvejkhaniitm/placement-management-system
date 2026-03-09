@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Drive Details
+{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h1 class="display-6 text-center card-title">{{ drive.name }} Details</h1>    
+</div>
+
+<div class="row justify-content-center mt-4">
+    <div class="col-md-8">         
+        <div class="card p-3">      
+            <p class="p-3">
+                <strong>Company:</strong> {{ drive.company.name }} <br>
+                <strong class="mt-1">Last Date to Apply:</strong> {{ drive.last_date }} <br>
+            </p>
+            <h3 class="display-8"><b>Job Description:</b></h3>
+            <p>{{ drive.job_discription }}</p>
+            <h3>Salary: {{ drive.salary }}</h3>
+            <h3>Location: {{ drive.location }}</h3>
+            <div class="p-3">
+                <a href="{{ url_for('apply_drive', drive_id=drive.id) }}" class="btn btn-outline-primary">Apply</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+   

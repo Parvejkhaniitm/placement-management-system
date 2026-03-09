@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Candidate Dashboard
+{% endblock %}
+
+{% block content %}     
+
+<h1 class=" text-center">Welcome, {{ user.username }}</h1>
+<div class="d-flex justify-content-between align-items-center mb-4 mt-4">
+    <h3 class="display-6 mb-0">Organizations</h3>
+    <div>
+        <a href="{{ url_for('profile') }}" class="btn btn-outline-primary me-2">View Profile</a>
+        <a href="{{ url_for('candidate_history_page') }}" class="btn btn-outline-danger">History</a>
+    </div>
+</div>
+    
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Company</th>
+                <th>View Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for company in companies %}
+            <tr>
+                <td>{{ company.name }}</td>
+                <td><a href="{{ url_for('company_details', company_id=company.id) }}" class="btn btn-outline-primary">View Details</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h3 class="display-6">Applied Drives</h3>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Drive ID</th>
+                <th>Drive Name</th>
+                <th>Company</th>
+                <th>Date</th>
+                <th>View Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for applied_candidate in candidate_drives %}
+            <tr>
+                <td>{{ applied_candidate.id }}</td>
+                <td>{{ applied_candidate.drive.name }}</td>
+                <td>{{ applied_candidate.drive.company.name }}</td>
+                <td>{{ applied_candidate.drive.last_date }}</td>
+                <td><a href="" class="btn btn-outline-primary">View Details</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+
+{% endblock %}

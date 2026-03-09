@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Update Application Status
+{% endblock %}
+
+{% block content %}
+<h1 class="display-6 text-center card">Update Application Status</h1>
+
+<form action="" method="Post">
+    <div class="form-group">
+        <label for="interview_type" class="form-label">Interview</label>
+        <select class="form-control" name="interview_type" id="" required>
+            <option value="Technical">In-person</option>
+            <option value="HR">Online</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="interview_date" class="form-label">Interview Date</label>
+        <input type="date" class="form-control" name="interview_date" id="" required>
+    </div>
+    <div class="form-group">
+        <label for="status" class="form-label">Status</label>
+        <select class="form-control" name="status" id="" required>
+            <option value="Selected">Selected</option>
+            <option value="Rejected">Rejected</option>
+            <option value="Pending">Pending</option>
+        </select>
+    </div>
+
+   
+
+    <div class="form-group">
+        <input type="submit" value="Update" class="btn btn-primary mt-3">
+    </div>
+</form>
+{% endblock %}

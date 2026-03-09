@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    login/register company
+{% endblock %}
+
+{%  block content %}
+     <h4 class="text-center display-4 card mb-4 p-3">Register or Login as Comapny</h4> 
+    
+    <div class="row mt-4 justify-content-center gap-3">
+    <div class="col-md-5 card p-4 shadow-lg gap-3">
+        <h4 class="display-6">Register for New Company</h4>
+        <p>
+            
+            <a href="{{ url_for('register_company') }} " class="btn btn-primary ">Register Company</a>
+        </p>
+    </div>
+    <div class="col-md-5 card p-4 shadow-lg gap-3">
+        <h4 class="display-6">Login as Company</h4>
+        <p>
+
+            <a href="{{ url_for('company_login') }}" class="btn btn-primary">Login Company</a>
+        </p>
+    </div>
+    </div>
+{% endblock %}
